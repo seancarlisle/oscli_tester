@@ -1,0 +1,15 @@
+openstack endpoint list
+openstack compute service list
+openstack server list
+openstack network agent list
+openstack network list
+openstack volume service list
+openstack volume list
+openstack image list
+nova service-list
+nova list
+neutron agent-list
+neutron net-list
+cinder service-list
+cinder list
+glance image-list

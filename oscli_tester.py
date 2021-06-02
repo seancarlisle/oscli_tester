@@ -20,6 +20,9 @@ class clientTester():
     try:
       if self.codebase in "newton ocata pike queens rocky stein train":
         subprocess.check_call(["python2.7", "-m", "virtualenv", self.base_dir + self.codebase])
+      if self.codebase in "ussuri victoria wallaby":
+        subprocess.check_call(["python3.6", "-m", "venv", self.base_dir + self.codebase])
+        subprocess.check_call([self.base_dir + self.codebase + "/bin/pip", "install", "--isolated", "-U", "pip" ])
     except Exception as e:
       print e
       sys.exit(1)
@@ -72,11 +75,11 @@ base_dir = "/openstack/venvs/"
 openrc = "/root/openrc"
 
 arg_parser = argparse.ArgumentParser()
-arg_parser.add_argument("codebase", type=str, help="The client versions to test.", choices=["newton", "ocata", "pike", "queens", "rocky", "stein", "train", "ussuri"])
+arg_parser.add_argument("codebase", type=str, help="The client versions to test.", choices=["newton", "ocata", "pike", "queens", "rocky", "stein", "train", "ussuri", "victoria", "wallaby"])
 arg_parser.add_argument("os-version", type=str, help="The version of OpenStack to test the clients against.")
 args = arg_parser.parse_args()
 
-version_file = open("oscli_tester/" + args.codebase + "_files/" + args.codebase + "-versions.json", 'r')
+version_file = open(args.codebase + "_files/" + args.codebase + "-versions.json", 'r')
 versions_json = json.loads(version_file.read())
 version_file.close()
 

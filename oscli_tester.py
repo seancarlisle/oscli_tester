@@ -76,7 +76,7 @@ arg_parser.add_argument("codebase", type=str, help="The client versions to test.
 arg_parser.add_argument("os-version", type=str, help="The version of OpenStack to test the clients against.")
 args = arg_parser.parse_args()
 
-version_file = open("/root//osa_tester/" + args.codebase + "_files/" + args.codebase + "-versions.json", 'r')
+version_file = open("oscli_tester/" + args.codebase + "_files/" + args.codebase + "-versions.json", 'r')
 versions_json = json.loads(version_file.read())
 version_file.close()
 

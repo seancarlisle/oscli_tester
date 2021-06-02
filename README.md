@@ -9,7 +9,7 @@ hard time understanding that...
 Run from the directory. The os-version doesn't matter, it's more for 
 documentation purposes in the testing output.
 
-root@localhost:~/osa_tester#./osa-tester.py
+root@localhost:~/oscli_tester#./oscli_tester.py
 usage: osa-tester.py [-h]
                      {newton,ocata,pike,queens,rocky,stein,train,ussuri}
                      os-version
